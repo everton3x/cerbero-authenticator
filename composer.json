@@ -1,0 +1,42 @@
+{
+    "name": "everton/cerbero-authenticator",
+    "description": "Autenticador do Cerbero",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cerbero\\Authenticator\\": "app/"
+        },
+        "files": [
+            "helpers.php",
+            "c:/users/everton/desktop/cerbero/cerbero.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Everton da Rosa",
+            "email": "everton3x@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+        "repositories": [
+        {
+            "type": "path",
+            "url": "c:/users/everton/desktop/router"
+        },
+        {
+            "type": "path",
+            "url": "c:/users/everton/desktop/cerbero"
+        },
+        {
+            "type": "path",
+            "url": "c:/users/everton/desktop/php-tools"
+        }
+    ],
+    "require": {
+        "twig/twig": "4.x-dev",
+        "everton3x/router": "*",
+        "everton3x/php-tools": "*",
+        "everton3x/cerbero": "*"
+    }
+}

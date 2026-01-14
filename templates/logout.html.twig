@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Logout{% endblock %}
+
+{% block head %}
+{{ parent() }}
+{% if not(return is null) %}
+<meta http-equiv="refresh" content="5; URL={{ return }}">
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="ui error message">{{ error }}</div>
+{% else %}
+  <div class="ui success message">Usuário foi desconectado!</div>
+{% endif %}
+
+{% if not (return is null) %}
+        <div class="ui info message">
+          <p>Você será redirecionado em alguns segundos...</p>
+          <p>Caso isso não aconteça ou não queira esperar, <a href="{{ return }}">clique aqui</a> para prosseguir.</p>
+        </div>
+{% endif %}
+{% endblock %}

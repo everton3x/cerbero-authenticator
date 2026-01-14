@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<h3 class="ui top attached inverted header">Autenticação</h3>
+{% if not(errors is empty) %}
+<div class="ui attached segment">
+    {% for error in errors %}
+        <div class="ui error message">
+            {{ error }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="ui attached segment">
+    <form class="ui form" method="post" action="{{ route('logon') }}">
+
+        {% if not (return is null) %}
+        <input type="hidden" name="return" value="{{ return }}">
+        {% endif %}
+        
+
+      <div class="required field">
+        <label for="identity">Usuário</label>
+        <input type="text" name="identity" id="identity" autofocus required>
+      </div>
+      <div class="required field">
+        <label>Senha</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button class="ui primary button" type="submit">Autenticar</button>
+    </form>
+</div>
+
+{% endblock %}
